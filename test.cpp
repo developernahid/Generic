@@ -1,38 +1,32 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
-template <class T>
-class N
-{
+class Complex {
 private:
-   T answer;
+    int real;
+    int imag;
 
 public:
-  N(T n)
-   {
-      //cout << "Inside constructor" << endl;
-      answer=n;
 
-   }
+    Complex(){
+    }
+    Complex(int r, int i) : real(r), imag(i) {}
 
-   T getNumber()
-   {
-      return answer;
-   }
+    friend Complex operator+(Complex&,Complex&);
 };
-int main()
-{
-   // Creating an object with an integer type.
-  N<int> numberInt(60);
 
-   // Creating an object with double type.
- N<double> numberDouble(17.27);
- N<char> chars('N');
+// Define the friend function for operator overloading
+Complex operator+(Complex& a,Complex& b) {
+    Complex c3;
+    c3.real= a.real+b.real;
+    c3.imag= a.imag+b.imag;
+    return c3;
+}
 
-
-   // Calling the class method getNumber with different data types:
-   cout << "Integer Number is: " << numberInt.getNumber() << endl;
-   cout << "Double Number = " << numberDouble.getNumber() << endl;
-   cout << "Char = "<<chars.getNumber()<<endl;
-
-   return 0;
+int main() {
+    Complex c1(2, 3);
+    Complex c2(1, 2);
+    Complex c3;
+    c3= c1 + c2;
+    cout<<c3.real<<" "<<c3.imag;
+    return 0;
 }

@@ -8,7 +8,6 @@ class N{
  a=m;
  }
  T sum(){
- //cout<<a;
  return a;
  }
 };
