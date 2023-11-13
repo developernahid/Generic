@@ -1,32 +1,27 @@
 #include <bits/stdc++.h>
 using namespace std;
-class Complex {
-private:
-    int real;
-    int imag;
-
-public:
-
-    Complex(){
+class sum{
+    int num,res;
+    public:
+    void input(){
+        cin>>num;
     }
-    Complex(int r, int i) : real(r), imag(i) {}
+    sum operator+(sum &ob){
+        sum res;
+        res.num=this->num+ob.num;
+        return res;
+    }
+    void output(){
+        cout<<num;
+    }
 
-    friend Complex operator+(Complex&,Complex&);
 };
+int main(){
+    sum ob1,ob2,ob3;
+    ob1.input();
+    ob2.input();
+    ob3=ob1+ob2;
+    ob3.output();
 
-// Define the friend function for operator overloading
-Complex operator+(Complex& a,Complex& b) {
-    Complex c3;
-    c3.real= a.real+b.real;
-    c3.imag= a.imag+b.imag;
-    return c3;
-}
-
-int main() {
-    Complex c1(2, 3);
-    Complex c2(1, 2);
-    Complex c3;
-    c3= c1 + c2;
-    cout<<c3.real<<" "<<c3.imag;
     return 0;
 }

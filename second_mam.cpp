@@ -19,7 +19,7 @@ public:
 };
 
 int main() {
-    myClass obj(10, 20);
+    myClass obj(2, 2);
 
     cout << "Original values: u = " << obj.u << ", v = " << obj.v << endl;
 
